@@ -42,7 +42,7 @@ flows:
             ]
           ]
         ]
-        println("gkeConfigMap-${gkeConfig.get("small-single-tenant").clusters.get("c-12").svc_account_key}
+        println("gkeConfigMap-${gkeConfigMap.get("small-single-tenant").clusters.get("c-12").svc_account_key}
         println("map-${gkeConfigMap}")   
     - log: "done"
   
