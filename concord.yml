@@ -9,14 +9,15 @@ flows:
         def clusterId = "c-12"
         def map = [ 
           clusters:  [
-            clusterId : [
-              info1: "info1",
-              info2: "info2"
+            "c-12" : [
+              info1: "info1data",
+              info2: "info2data"
 
             ]  
           ]
         ]
         println("map-${map}")
+        println("map-${map.clusters}")
         println("map-${map.clusters.get(clusterId)}")
     - log: "done"
   
