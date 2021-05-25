@@ -1,13 +1,13 @@
 flows:
   test-groovy-simple:
-  - script: groovy 
-    body: |
-      def clusterId = "c-1"
-      def map = [ clusterId ]
-      println("map-${map}")
-  - log: "done"
+    - script: groovy 
+      body: |
+        def clusterId = "c-1"
+        def map = [ clusterId ]
+        println("map-${map}")
+    - log: "done"
   
 triggers:
-  - manual:
+- manual:
     name: test-groovy-simple
     entryPoint: test-groovy-simple
