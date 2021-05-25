@@ -20,15 +20,12 @@ flows:
         println("map-${map.clusters}")
         println("map-${map.clusters.get(clusterId)}")
         println("map-${map.clusters.get(clusterId)}")
-        def workerMap =  [
-                "worker" : [ min :  1, max : 1, sku : "n1-standard-8", cpu : "32", mem : "120GB" ]
-          ]
-        def istioMap =  [
-                "istio" : [ min :  1, max : 1, sku : "n1-standard-8",cpu : "32", mem : "120GB" ]
+        def workerMap =  [ min :  1, max : 1, sku : "n1-standard-8", cpu : "32", mem : "120GB" ]
+        def istioMap =   [ min :  1, max : 1, sku : "n1-standard-8",cpu : "32", mem : "120GB" ]
           ]
         def gkeConfigMap = [
           "small-single-tenant":  [
-            cluster_profile: [ workerMap, istioMap ],
+            cluster_profile: [ ("worker"): workerMap, ("istio"): istioMap ],
             clusters : [
               (clusterId): [
                 region : "region",
@@ -45,6 +42,7 @@ flows:
             ]
           ]
         ]
+        println("gkeConfigMap-${gkeConfig.get("small-single-tenant").clusters.get("c-12").svc_account_key}
         println("map-${gkeConfigMap}")   
     - log: "done"
   
