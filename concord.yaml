@@ -2,7 +2,7 @@ flows:
   test-groovy-simple:
     - script: groovy 
       body: |
-        def clusterId = "c-1"
+        def clusterId = "c-12"
         def map = [ clusterId ]
         println("map-${map}")
     - log: "done"
