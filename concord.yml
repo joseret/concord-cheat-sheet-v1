@@ -1,14 +1,23 @@
 configuration:
   dependencies:
   - "mvn://org.codehaus.groovy:groovy-all:pom:2.5.8"
-  
+
 flows:
   test-groovy-simple:
     - script: groovy 
       body: |
         def clusterId = "c-12"
-        def map = [ clusterId ]
+        def map = [ 
+          clusters:  [
+            clusterId : [
+              info1: "info1",
+              info2: "info2"
+
+            ]  
+          ]
+        ]
         println("map-${map}")
+        println("map-${map.clusters.get(clusterId)}")
     - log: "done"
   
 triggers:
