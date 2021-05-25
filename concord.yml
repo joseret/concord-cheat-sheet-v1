@@ -40,7 +40,7 @@ flows:
                 svc_account_key : "svcAccountKey",
                 svc_account : "svcAccount",
                 vpc_name : "vpcName",
-                service_project: "serviceProject"ß
+                service_project: "serviceProject"
               ]
             ]
           ]
