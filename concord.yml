@@ -1,6 +1,6 @@
 configuration:
   arguments:
-    a1:
+    a1: "a1-data"
     a2:
       a3: 'test'
 
@@ -9,8 +9,8 @@ configuration:
 
 flows:
   test-groovy-simple:
-    -log: "a1-${a1}"
-    -log: "a2-${a2}"
+    - log: "a1-${a1}"
+    - log: "a2-${a2}"
     - script: groovy 
       body: |     
         def clusterId = "c-12"
