@@ -1,11 +1,18 @@
 configuration:
+  arguments:
+    a1:
+    a2:
+      a3: 'test'
+
   dependencies:
   - "mvn://org.codehaus.groovy:groovy-all:pom:2.5.8"
 
 flows:
   test-groovy-simple:
+    -log: "a1-${a1}"
+    -log: "a2-${a2}"
     - script: groovy 
-      body: |
+      body: |     
         def clusterId = "c-12"
         def map = [ 
           clusters:  [
